@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinda Advertising Display | Commercial LED &amp; Digital Signage Manufacturer</title>
+<meta name="description" content="Jinda Advertising Display designs and manufactures commercial LED and digital signage — wall mounted screens, floor stand displays, hanging digital signage, and light boxes — for brands and integrators in 30+ countries.">
+<meta name="theme-color" content="#05070A">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          void:   '#05070A',
+          panel:  '#0D1114',
+          panel2: '#12171C',
+          ink:    '#F3F5F7',
+          inkdim: '#98A2AA',
+          gold:   { DEFAULT: '#E7B45C', light: '#F4CE85' },
+          cyan:   { DEFAULT: '#4FD8E0' },
+          line:   'rgba(255,255,255,0.08)'
+        },
+        fontFamily: {
+          display: ['"Space Grotesk"', 'sans-serif'],
+          sans:    ['Inter', 'sans-serif'],
+          mono:    ['"IBM Plex Mono"', 'monospace']
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  :root{
+    --void:#05070A;
+    --panel:#0D1114;
+    --panel-2:#12171C;
+    --line: rgba(255,255,255,.08);
+    --line-strong: rgba(255,255,255,.16);
+    --ink:#F3F5F7;
+    --ink-dim:#98A2AA;
+    --gold:#E7B45C;
+    --gold-2:#F4CE85;
+    --cyan:#4FD8E0;
+  }
+
+  html{ scroll-behavior:smooth; }
+  section[id]{ scroll-margin-top:96px; }
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  ::selection{ background:var(--gold); color:#0A0A0A; }
+
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--void); }
+  ::-webkit-scrollbar-thumb{ background:var(--panel-2); border-radius:6px; border:2px solid var(--void); }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--line-strong); }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:2px; }
+
+  /* Nav */
+  .nav-link{ position:relative; font-size:.875rem; color:var(--ink-dim); font-weight:500; transition:color .25s ease; padding:.25rem 0; }
+  .nav-link:hover{ color:var(--ink); }
+  .nav-link::after{ content:''; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--gold); transition:width .25s ease; }
+  .nav-link:hover::after{ width:100%; }
+  #navbar{ transition:background-color .35s ease, backdrop-filter .35s ease, border-color .35s ease; border-bottom:1px solid transparent; }
+  #navbar.scrolled{ background:rgba(5,7,10,.72); backdrop-filter:blur(20px) saturate(150%); -webkit-backdrop-filter:blur(20px) saturate(150%); border-bottom-color:var(--line); }
+
+  /* Buttons */
+  .btn-primary{ display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.75rem; border-radius:9999px; background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#181206; font-weight:600; font-size:.9rem; letter-spacing:.01em; transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease; box-shadow:0 0 0 0 rgba(231,180,92,0); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 14px 34px -10px rgba(231,180,92,.5); }
+
+  .btn-ghost{ display:inline-flex; align-items:center; gap:.5rem; padding:.85rem 1.75rem; border-radius:9999px; border:1px solid var(--line-strong); color:var(--ink); font-weight:500; font-size:.9rem; background:rgba(255,255,255,.02); backdrop-filter:blur(6px); transition:border-color .3s ease, background .3s ease, transform .3s ease; }
+  .btn-ghost:hover{ border-color:var(--gold); background:rgba(231,180,92,.06); transform:translateY(-2px); }
+  .btn-ghost svg{ transition:transform .3s ease; }
+  .btn-ghost:hover svg{ transform:translateX(3px); }
+
+  /* Type helpers */
+  .eyebrow{ display:inline-flex; align-items:center; gap:.6rem; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.25em; text-transform:uppercase; color:var(--gold); margin-bottom:1rem; }
+  .section-heading{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.5vw,2.75rem); line-height:1.15; letter-spacing:-.01em; color:var(--ink); margin-bottom:1rem; }
+  .section-sub{ color:var(--ink-dim); font-size:1.05rem; line-height:1.7; max-width:42rem; }
+
+  /* Product cards */
+  .product-card{ position:relative; border:1px solid var(--line); background:linear-gradient(180deg, var(--panel), var(--panel-2)); border-radius:1.25rem; padding:2.25rem; transition:transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .4s ease; }
+  .product-card:hover{ transform:translateY(-8px); border-color:rgba(231,180,92,.4); box-shadow:0 24px 60px -24px rgba(0,0,0,.65), 0 0 44px -26px rgba(231,180,92,.5); }
+  .product-card .icon-wrap{ width:3.25rem; height:3.25rem; border-radius:.85rem; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--gold); margin-bottom:1.5rem; transition:border-color .3s ease, background .3s ease; }
+  .product-card:hover .icon-wrap{ border-color:var(--gold); background:rgba(231,180,92,.08); }
+  .product-card h3{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.3rem; color:var(--ink); margin-bottom:.6rem; }
+  .product-card p{ color:var(--ink-dim); font-size:.95rem; line-height:1.65; margin-bottom:1.4rem; }
+  .spec-chips{ display:flex; flex-wrap:wrap; gap:.5rem; }
+  .spec-chips li{ list-style:none; font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--line); padding:.35rem .65rem; border-radius:.4rem; }
+
+  /* Capability stats */
+  .capability-stat{ display:flex; gap:1rem; align-items:flex-start; min-width:0; }
+  .capability-stat .icon{ width:2.5rem; height:2.5rem; flex:none; border-radius:.65rem; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--cyan); }
+  .capability-stat .num{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.35rem; color:var(--ink); }
+  .capability-stat .label{ font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); margin-top:.15rem; }
+
+  .blueprint-wrap{ position:relative; border:1px solid var(--line); border-radius:1.25rem; overflow:hidden; background:var(--panel); }
+  .blueprint-scan{ position:absolute; left:0; right:0; height:22%; top:-22%; background:linear-gradient(180deg, transparent, rgba(79,216,224,.22), transparent); animation:blueprintScan 5.5s ease-in-out infinite; pointer-events:none; }
+  @keyframes blueprintScan{ 0%{ top:-22%; } 50%{ top:100%; } 100%{ top:-22%; } }
+
+  /* Certification badges */
+  .badge-circle{ width:6rem; height:6rem; border-radius:9999px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; color:var(--ink); margin:0 auto 1.25rem; background:radial-gradient(circle at 50% 30%, rgba(231,180,92,.14), transparent 70%); transition:border-color .3s ease, transform .3s ease; }
+  .cert-badge:hover .badge-circle{ border-color:var(--gold); transform:translateY(-4px); }
+  .cert-badge h4{ font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--ink); margin-bottom:.35rem; }
+  .cert-badge p{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); }
+
+  /* Reveal on scroll */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+
+  /* CTA glow */
+  .cta-glow{ position:relative; }
+  .cta-glow::before{ content:''; position:absolute; inset:-40% -10% auto -10%; height:60%; background:radial-gradient(ellipse at center, rgba(231,180,92,.18), transparent 70%); pointer-events:none; }
+
+  /* Hero */
+  .scanline-sweep{ background:linear-gradient(180deg, transparent 0%, rgba(79,216,224,.05) 45%, rgba(79,216,224,.12) 50%, rgba(79,216,224,.05) 55%, transparent 100%); background-size:100% 220%; animation:sweep 7s linear infinite; mix-blend-mode:screen; }
+  @keyframes sweep{ 0%{ background-position:0 -120%; } 100%{ background-position:0 120%; } }
+
+  /* WhatsApp */
+  .whatsapp-btn{ position:relative; width:3.75rem; height:3.75rem; border-radius:9999px; background:#25D366; display:flex; align-items:center; justify-content:center; color:#0B1B12; box-shadow:0 12px 32px -10px rgba(37,211,102,.6); transition:transform .3s ease; }
+  .whatsapp-btn:hover{ transform:scale(1.08); }
+  .whatsapp-ring{ position:absolute; inset:0; border-radius:9999px; border:2px solid #25D366; animation:ring 2.4s ease-out infinite; }
+  @keyframes ring{ 0%{ transform:scale(1); opacity:.6; } 100%{ transform:scale(1.9); opacity:0; } }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *, *::before, *::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body class="bg-void text-ink font-sans antialiased">
+
+<a href="#home" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-gold focus:text-[#181206] focus:px-4 focus:py-2 focus:rounded-full focus:font-semibold">Skip to content</a>
+
+<!-- ============ NAVBAR ============ -->
+<header id="navbar" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <a href="#home" class="flex items-center gap-3 group">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="10" cy="5" r="3" fill="#FF4D5E"/>
+          <circle cx="5" cy="14" r="3" fill="#37E27A"/>
+          <circle cx="15" cy="14" r="3" fill="#3FA9FF"/>
+        </svg>
+        <span class="flex flex-col leading-none">
+          <span class="font-display font-bold text-lg tracking-tight text-ink">JINDA</span>
+          <span class="font-mono text-[9px] tracking-[0.28em] text-inkdim mt-0.5">ADVERTISING DISPLAY</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-10" aria-label="Primary">
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#manufacturing" class="nav-link">Manufacturing</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center">
+        <a href="#contact" class="btn-primary">Request a Quote</a>
+      </div>
+
+      <button id="menuToggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line text-ink" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div id="mobileMenu" class="fixed inset-0 z-40 lg:hidden invisible opacity-0 -translate-y-2 transition-all duration-300 bg-void/97 backdrop-blur-xl">
+  <div class="h-full flex flex-col items-center justify-center gap-8 px-6">
+    <a href="#products" class="font-display text-2xl font-semibold text-ink">Products</a>
+    <a href="#manufacturing" class="font-display text-2xl font-semibold text-ink">Manufacturing</a>
+    <a href="#certifications" class="font-display text-2xl font-semibold text-ink">Certifications</a>
+    <a href="#contact" class="font-display text-2xl font-semibold text-ink">Contact</a>
+    <a href="#contact" class="btn-primary mt-4">Request a Quote</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="relative overflow-hidden">
+    <canvas id="pixelCanvas" class="absolute inset-0 w-full h-full" aria-hidden="true"></canvas>
+    <div class="absolute inset-0 pointer-events-none" style="background:radial-gradient(ellipse at 50% 35%, transparent 0%, var(--void) 78%);"></div>
+    <div class="scanline-sweep absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-40 pb-20 sm:pt-48 sm:pb-24">
+      <div class="max-w-3xl">
+        <div class="reveal eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Commercial Display Manufacturer
+        </div>
+        <h1 class="reveal font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight text-ink mb-6">
+          Every pixel,<br>engineered to order.
+        </h1>
+        <p class="reveal max-w-xl text-lg text-inkdim leading-relaxed mb-10">
+          Jinda Advertising Display designs and manufactures commercial LED and digital signage — wall-mounted, floor-standing, hanging, and light box — for brands and integrators in 30+ countries.
+        </p>
+        <div class="reveal flex flex-wrap items-center gap-4">
+          <a href="#contact" class="btn-primary">Request a Quote</a>
+          <a href="#products" class="btn-ghost">
+            View Product Range
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative z-10 border-t border-line bg-panel/40">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-3 font-mono text-[11px] tracking-widest text-inkdim uppercase text-center">
+        <span>OEM &amp; ODM Manufacturing</span>
+        <span class="w-1 h-1 rounded-full bg-gold/60"></span>
+        <span>Free Sample Program</span>
+        <span class="w-1 h-1 rounded-full bg-gold/60"></span>
+        <span>24/7 Engineering Support</span>
+        <span class="w-1 h-1 rounded-full bg-gold/60"></span>
+        <span>Global Logistics Network</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CINEMATIC PRODUCT STORY ============ -->
+
+  <!-- 1. Full-width editorial image -->
+  <section class="relative py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-10">
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Multi-Screen Display System
+        </div>
+        <h2 class="section-heading">Designed for high-impact commercial environments.</h2>
+        <p class="section-sub mb-8">Large-format synchronized display solutions for retail, exhibitions, transportation hubs, and branded architectural installations.</p>
+        <a href="#products" class="btn-ghost">
+          Explore Display Systems
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group overflow-hidden rounded-3xl border border-line">
+        <img
+          src="product-01.jpg"
+          alt="Three-panel synchronized LED display system running a festival content sequence"
+          width="928" height="800"
+          loading="lazy"
+          class="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Two-column cinematic reveal -->
+  <section class="relative py-24 sm:py-28 bg-panel/20 border-y border-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="reveal order-2 lg:order-1">
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Technical Reveal
+        </div>
+        <h2 class="section-heading">Engineering visible at every frame.</h2>
+        <p class="section-sub mb-8">A cinematic view of activation, illumination, and structural precision in Jinda's digital display systems.</p>
+        <a href="#signature-display" class="btn-ghost">
+          View Motion Story
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal order-1 lg:order-2 group relative overflow-hidden rounded-[32px] border border-line aspect-video">
+        <video
+          class="pixel-video w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          autoplay muted loop playsinline preload="metadata"
+          poster="cube-activate-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="cube-activate.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Full-width category collage -->
+  <section class="relative py-24 sm:py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-10 mx-auto text-center">
+        <div class="eyebrow" style="justify-content:center;">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Display Categories
+        </div>
+        <h2 class="section-heading mx-auto">Wall, hanging, standee, and commercial signage systems.</h2>
+        <p class="section-sub mx-auto">A structured product ecosystem designed for distributors, integrators, and international buyers.</p>
+      </div>
+
+      <div class="reveal group overflow-hidden rounded-3xl border border-line max-w-6xl mx-auto">
+        <img
+          src="product-02-collage.jpg"
+          alt="Product photography strip showing hanging digital signage above a restaurant counter, stacked hanging displays, and a standee signage display"
+          width="1408" height="103"
+          loading="lazy"
+          class="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Cinematic showcase video -->
+  <section id="signature-display" class="relative py-24 sm:py-28 bg-panel/20 border-y border-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-10">
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Signature Display
+        </div>
+        <h2 class="section-heading">Every pixel, engineered to command attention.</h2>
+        <p class="section-sub mb-8">A premium visual presentation focused on brightness, contrast, synchronization, and architectural impact.</p>
+        <a href="#products" class="btn-ghost">
+          Explore Signature Displays
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </div>
+
+      <div class="reveal group relative overflow-hidden rounded-[32px] border border-line aspect-video">
+        <video
+          class="pixel-video w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          autoplay muted loop playsinline preload="metadata"
+          poster="cube-glow-poster.jpg"
+          aria-hidden="true"
+        >
+          <source src="cube-glow.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Subtle transition to capabilities -->
+  <section class="relative py-14 sm:py-16">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border-t border-line pt-10">
+        <div>
+          <div class="eyebrow mb-2">
+            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+            Next
+          </div>
+          <h3 class="font-display font-semibold text-xl sm:text-2xl text-ink mb-1">Factory capability and export support.</h3>
+          <p class="text-inkdim text-sm sm:text-base">Continue to manufacturing capacity, certifications, and global delivery readiness.</p>
+        </div>
+        <a href="#manufacturing" class="btn-ghost shrink-0">
+          View Capabilities
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section id="stats" class="relative py-20 border-b border-line bg-panel/20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-line">
+        <div class="reveal text-center py-8 sm:py-0">
+          <div class="font-display font-bold text-5xl lg:text-6xl text-ink"><span class="count-up" data-target="10">0</span><span class="text-gold">+</span></div>
+          <div class="mt-3 font-mono text-xs tracking-[0.2em] text-inkdim uppercase">Years Manufacturing</div>
+        </div>
+        <div class="reveal text-center py-8 sm:py-0">
+          <div class="font-display font-bold text-5xl lg:text-6xl text-ink"><span class="count-up" data-target="500">0</span><span class="text-gold">+</span></div>
+          <div class="mt-3 font-mono text-xs tracking-[0.2em] text-inkdim uppercase">Projects Delivered</div>
+        </div>
+        <div class="reveal text-center py-8 sm:py-0">
+          <div class="font-display font-bold text-5xl lg:text-6xl text-ink"><span class="count-up" data-target="30">0</span><span class="text-gold">+</span></div>
+          <div class="mt-3 font-mono text-xs tracking-[0.2em] text-inkdim uppercase">Countries Served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTS ============ -->
+  <section id="products" class="relative py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="reveal max-w-2xl mb-16">
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Product Range
+        </div>
+        <h2 class="section-heading">Four formats. One manufacturing standard.</h2>
+        <p class="section-sub">Every display is engineered in-house and configurable to your site's power, mounting, and viewing requirements.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <!-- Wall Mounted -->
+        <article class="reveal product-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="6" x2="6" y2="34"/>
+              <rect x="11" y="10" width="23" height="16" rx="1.5"/>
+              <line x1="6" y1="14" x2="11" y2="14"/>
+              <line x1="6" y1="22" x2="11" y2="22"/>
+            </svg>
+          </div>
+          <h3>Wall Mounted Screens</h3>
+          <p>Slim-profile LED and LCD panels engineered for permanent indoor and outdoor installation — from retail storefronts to transit hubs.</p>
+          <ul class="spec-chips">
+            <li>Ultra-slim mount</li>
+            <li>IP65 outdoor rated</li>
+            <li>Custom pixel pitch</li>
+          </ul>
+        </article>
+
+        <!-- Floor Stand -->
+        <article class="reveal product-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="10" y="5" width="20" height="14" rx="1.5"/>
+              <line x1="20" y1="19" x2="20" y2="31"/>
+              <line x1="12" y1="34" x2="28" y2="34"/>
+              <line x1="16" y1="31" x2="24" y2="31"/>
+            </svg>
+          </div>
+          <h3>Floor Stand Displays</h3>
+          <p>Freestanding digital displays on mobile or fixed bases, built for showrooms, lobbies, and event spaces that need to move.</p>
+          <ul class="spec-chips">
+            <li>Wheeled or fixed base</li>
+            <li>Touch-enabled options</li>
+            <li>Quick-assembly frame</li>
+          </ul>
+        </article>
+
+        <!-- Hanging -->
+        <article class="reveal product-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="8" y1="6" x2="32" y2="6"/>
+              <line x1="14" y1="6" x2="14" y2="13"/>
+              <line x1="26" y1="6" x2="26" y2="13"/>
+              <rect x="9" y="13" width="22" height="16" rx="1.5"/>
+            </svg>
+          </div>
+          <h3>Hanging Digital Signage</h3>
+          <p>Ceiling-suspended screens and video walls for airports, malls, and stadiums — engineered for continuous duty cycles.</p>
+          <ul class="spec-chips">
+            <li>Dual-sided viewing</li>
+            <li>Reinforced rigging</li>
+            <li>24/7 duty-rated</li>
+          </ul>
+        </article>
+
+        <!-- Light Box -->
+        <article class="reveal product-card">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 40 40" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="8" width="22" height="24" rx="2"/>
+              <line x1="14" y1="15" x2="26" y2="15"/>
+              <line x1="14" y1="20" x2="26" y2="20"/>
+              <line x1="14" y1="25" x2="26" y2="25"/>
+              <line x1="9" y1="5" x2="9" y2="2"/>
+              <line x1="31" y1="5" x2="31" y2="2"/>
+            </svg>
+          </div>
+          <h3>Light Boxes</h3>
+          <p>Illuminated signage and menu boards with even edge-lit distribution, built for storefronts and transit advertising.</p>
+          <ul class="spec-chips">
+            <li>Edge-lit LED</li>
+            <li>Weatherproof housing</li>
+            <li>Snap-frame graphics</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MANUFACTURING ============ -->
+  <section id="manufacturing" class="relative py-28 bg-panel/20 border-y border-line">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="reveal">
+        <div class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+          Manufacturing
+        </div>
+        <h2 class="section-heading">Built in-house, from panel to enclosure.</h2>
+        <p class="section-sub mb-10">Our facility handles SMD mounting, cabinet fabrication, and full-unit QC under one roof — giving OEM and ODM partners tighter tolerances and faster lead times.</p>
+
+        <!-- NOTE: placeholder capacity figures — replace with your factory's real data -->
+        <div class="grid grid-cols-2 gap-x-6 gap-y-8">
+          <div class="capability-stat">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V10l5 3V10l5 3V10l5 3v8H3Z"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
+            </div>
+            <div>
+              <div class="num">20,000+ sqm</div>
+              <div class="label">Factory Area</div>
+            </div>
+          </div>
+          <div class="capability-stat">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+            </div>
+            <div>
+              <div class="num">5,000+ Units</div>
+              <div class="label">Monthly Capacity</div>
+            </div>
+          </div>
+          <div class="capability-stat">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+            </div>
+            <div>
+              <div class="num">12-Stage</div>
+              <div class="label">QC Inspection</div>
+            </div>
+          </div>
+          <div class="capability-stat">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.25"/><path d="M2.75 20a6.25 6.25 0 0 1 12.5 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M15 20a4.5 4.5 0 0 1 6.75-3.9"/></svg>
+            </div>
+            <div>
+              <div class="num">40+ Engineers</div>
+              <div class="label">R&amp;D Team</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="blueprint-wrap aspect-square">
+          <div class="blueprint-scan" aria-hidden="true"></div>
+          <svg viewBox="0 0 480 480" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                <rect width="24" height="24" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="1"/>
+              </pattern>
+            </defs>
+            <rect x="40" y="40" width="400" height="400" rx="8" fill="url(#grid)" stroke="rgba(255,255,255,.12)"/>
+            <path d="M40 74V40h34" fill="none" stroke="#E7B45C" stroke-width="2"/>
+            <path d="M406 40h34v34" fill="none" stroke="#E7B45C" stroke-width="2"/>
+            <path d="M440 406v34h-34" fill="none" stroke="#E7B45C" stroke-width="2"/>
+            <path d="M74 440H40v-34" fill="none" stroke="#E7B45C" stroke-width="2"/>
+            <g fill="#4FD8E0">
+              <rect x="112" y="120" width="9" height="9" opacity=".75"/>
+              <rect x="196" y="152" width="9" height="9" opacity=".4"/>
+              <rect x="268" y="112" width="9" height="9" opacity=".6"/>
+              <rect x="152" y="212" width="9" height="9" opacity=".3"/>
+              <rect x="300" y="204" width="9" height="9" opacity=".7"/>
+              <rect x="232" y="260" width="9" height="9" opacity=".5"/>
+              <rect x="316" y="292" width="9" height="9" opacity=".4"/>
+              <rect x="164" y="316" width="9" height="9" opacity=".65"/>
+            </g>
+            <g fill="#E7B45C">
+              <rect x="220" y="176" width="9" height="9" opacity=".55"/>
+              <rect x="268" y="332" width="9" height="9" opacity=".5"/>
+            </g>
+            <text x="240" y="462" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" fill="rgba(255,255,255,.42)" letter-spacing="1">PIXEL PITCH — P2.5 TO P10</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section id="certifications" class="relative py-28">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <div class="reveal eyebrow" style="justify-content:center;">
+        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+        Certified
+      </div>
+      <h2 class="reveal section-heading mx-auto">Compliant by design.</h2>
+      <p class="reveal section-sub mx-auto">Every product line is tested and documented against the standards your project and your local market require.</p>
+
+      <div class="mt-16 grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+        <div class="reveal cert-badge">
+          <div class="badge-circle">CE</div>
+          <h4>CE Marking</h4>
+          <p>European Conformity</p>
+        </div>
+        <div class="reveal cert-badge">
+          <div class="badge-circle">RoHS</div>
+          <h4>RoHS Compliant</h4>
+          <p>Hazardous Substance Free</p>
+        </div>
+        <div class="reveal cert-badge">
+          <div class="badge-circle">ISO 9001</div>
+          <h4>ISO 9001</h4>
+          <p>Quality Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT / CTA ============ -->
+  <section id="contact" class="relative py-28">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="reveal cta-glow relative rounded-3xl border border-line bg-panel/60 px-8 py-16 sm:px-16 text-center overflow-hidden">
+        <h2 class="section-heading mx-auto">Ready to spec your next project?</h2>
+        <p class="section-sub mx-auto mb-10">Share your site requirements and our engineering team will respond with pixel pitch, enclosure, and lead-time options within one business day.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <!-- TODO: replace with your real sales inbox -->
+          <a href="mailto:sales@jindadisplay.com" class="btn-primary">Request a Quote</a>
+          <!-- TODO: replace with your real WhatsApp number, international format, digits only -->
+          <a href="https://wa.me/15551234567" target="_blank" rel="noopener" class="btn-ghost">
+            Chat on WhatsApp
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="relative border-t border-line py-16">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <div>
+      <a href="#home" class="flex items-center gap-3 mb-4">
+        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+        <span class="font-display font-bold text-base text-ink">JINDA</span>
+      </a>
+      <p class="text-sm text-inkdim leading-relaxed">Commercial LED and digital signage manufacturer, shipping to integrators and brands in 30+ countries.</p>
+    </div>
+    <div>
+      <div class="font-mono text-[11px] tracking-[0.2em] uppercase text-inkdim mb-4">Products</div>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#products" class="text-inkdim hover:text-ink transition-colors">Wall Mounted Screens</a></li>
+        <li><a href="#products" class="text-inkdim hover:text-ink transition-colors">Floor Stand Displays</a></li>
+        <li><a href="#products" class="text-inkdim hover:text-ink transition-colors">Hanging Digital Signage</a></li>
+        <li><a href="#products" class="text-inkdim hover:text-ink transition-colors">Light Boxes</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-mono text-[11px] tracking-[0.2em] uppercase text-inkdim mb-4">Company</div>
+      <ul class="space-y-3 text-sm">
+        <li><a href="#manufacturing" class="text-inkdim hover:text-ink transition-colors">Manufacturing</a></li>
+        <li><a href="#certifications" class="text-inkdim hover:text-ink transition-colors">Certifications</a></li>
+        <li><a href="#contact" class="text-inkdim hover:text-ink transition-colors">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-mono text-[11px] tracking-[0.2em] uppercase text-inkdim mb-4">Contact</div>
+      <!-- TODO: replace placeholder contact details with your real ones -->
+      <ul class="space-y-3 text-sm text-inkdim">
+        <li>sales@jindadisplay.com</li>
+        <li>+1 (555) 123-4567</li>
+        <li>Factory &amp; HQ — on request</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 mt-16 pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="flex items-center gap-2 font-mono text-xs text-inkdim">
+      <svg width="12" height="12" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
+      <span>&copy; <span id="year"></span> Jinda Advertising Display. All rights reserved.</span>
+    </div>
+    <div class="font-mono text-xs text-inkdim">Designed &amp; manufactured in-house.</div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING WHATSAPP ============ -->
+<!-- TODO: replace with your real WhatsApp number, international format, digits only -->
+<a href="https://wa.me/15551234567" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp" class="fixed bottom-6 right-6 z-50 whatsapp-btn">
+  <span class="whatsapp-ring" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" class="w-7 h-7" fill="currentColor" aria-hidden="true">
+    <path d="M12 2C6.48 2 2 6.24 2 11.5c0 1.98.62 3.82 1.7 5.35L2.5 21.5l4.9-1.28A10.4 10.4 0 0 0 12 21c5.52 0 10-4.24 10-9.5S17.52 2 12 2Zm5.3 13.1c-.23.63-1.32 1.22-1.82 1.28-.47.06-1.06.09-1.71-.11-.39-.12-.9-.29-1.55-.57-2.72-1.18-4.5-3.9-4.63-4.08-.14-.18-1.1-1.47-1.1-2.8 0-1.33.7-1.98.95-2.25.24-.27.53-.34.71-.34h.5c.16 0 .38-.03.58.44.23.55.77 1.9.84 2.04.07.14.11.3.02.48-.09.18-.14.29-.27.45-.14.16-.29.36-.41.48-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.24 2.22 1.38.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.86.27.14.44.2.51.32.07.12.07.68-.16 1.31Z"/>
+  </svg>
+</a>
+
+<script>
+  // Current year
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // Mobile menu
+  (function () {
+    var toggle = document.getElementById('menuToggle');
+    var menu = document.getElementById('mobileMenu');
+    var iconMenu = document.getElementById('iconMenu');
+    var iconClose = document.getElementById('iconClose');
+    if (!toggle || !menu) return;
+    var open = false;
+
+    function setMenu(next) {
+      open = next;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        menu.classList.remove('invisible', 'opacity-0', '-translate-y-2');
+        menu.classList.add('visible', 'opacity-100', 'translate-y-0');
+        document.body.classList.add('overflow-hidden');
+        iconMenu.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      } else {
+        menu.classList.add('invisible', 'opacity-0', '-translate-y-2');
+        menu.classList.remove('visible', 'opacity-100', 'translate-y-0');
+        document.body.classList.remove('overflow-hidden');
+        iconMenu.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+    }
+    toggle.addEventListener('click', function () { setMenu(!open); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+  })();
+
+  // Navbar scroll state
+  (function () {
+    var navbar = document.getElementById('navbar');
+    if (!navbar) return;
+    function onScroll() {
+      if (window.scrollY > 20) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  // Reveal-on-scroll
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    els.forEach(function (el, i) {
+      el.style.transitionDelay = (Math.min(i % 4, 4) * 0.08) + 's';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Count-up stats
+  (function () {
+    var counters = document.querySelectorAll('.count-up');
+    if (!counters.length) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseInt(el.dataset.target, 10) || 0;
+        io.unobserve(el);
+        if (reduceMotion) { el.textContent = target; return; }
+        var duration = 1400;
+        var start = null;
+        function tick(ts) {
+          if (start === null) start = ts;
+          var p = Math.min((ts - start) / duration, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(eased * target);
+          if (p < 1) requestAnimationFrame(tick);
+          else el.textContent = target;
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Hero LED pixel grid
+  (function () {
+    var canvas = document.getElementById('pixelCanvas');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var cellSize = 22;
+    var cols = 0, rows = 0, dpr = 1;
+    var cells = [];
+
+    function buildCells() {
+      cells = [];
+      var total = cols * rows;
+      var activeCount = Math.floor(total * 0.06);
+      for (var i = 0; i < total; i++) {
+        cells.push({
+          active: false,
+          phase: Math.random() * Math.PI * 2,
+          speed: 0.4 + Math.random() * 0.8,
+          hue: Math.random() > 0.55 ? 'cyan' : 'gold'
+        });
+      }
+      var idx = [];
+      for (var j = 0; j < total; j++) idx.push(j);
+      for (var k = idx.length - 1; k > 0; k--) {
+        var r = Math.floor(Math.random() * (k + 1));
+        var tmp = idx[k]; idx[k] = idx[r]; idx[r] = tmp;
+      }
+      for (var m = 0; m < activeCount; m++) cells[idx[m]].active = true;
+    }
+
+    function resize() {
+      var rect = canvas.parentElement.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.max(1, Math.ceil(rect.width / cellSize));
+      rows = Math.max(1, Math.ceil(rect.height / cellSize));
+      buildCells();
+    }
+
+    function draw(time) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          var cell = cells[r * cols + c];
+          if (!cell) continue;
+          var alpha = 0.025;
+          if (cell.active) {
+            alpha = 0.05 + Math.abs(Math.sin(time * 0.001 * cell.speed + cell.phase)) * 0.32;
+          }
+          ctx.fillStyle = cell.hue === 'cyan'
+            ? 'rgba(79,216,224,' + alpha + ')'
+            : 'rgba(231,180,92,' + alpha + ')';
+          ctx.fillRect(c * cellSize + 1, r * cellSize + 1, cellSize - 3, cellSize - 3);
+        }
+      }
+      if (!reduceMotion) requestAnimationFrame(draw);
+    }
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resize, 150);
+    });
+
+    resize();
+    requestAnimationFrame(draw);
+  })();
+
+  // Cinematic product-story videos — respect reduced motion
+  (function () {
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduceMotion) return;
+    document.querySelectorAll('.pixel-video').forEach(function (v) {
+      v.pause();
+      v.removeAttribute('autoplay');
+    });
+  })();
+</script>
+
+</body>
+</html>
