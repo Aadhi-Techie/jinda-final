@@ -3,9 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jinda Advertising Display | Commercial LED &amp; Digital Signage Manufacturer</title>
-<meta name="description" content="Jinda Advertising Display designs and manufactures commercial LED and digital signage — wall mounted screens, floor stand displays, hanging digital signage, and light boxes — for brands and integrators in 30+ countries.">
+<title>Jinda Advertising Display | LED &amp; Digital Signage Manufacturer</title>
+<meta name="description" content="Commercial LED and digital signage manufacturer — wall mounted, floor stand, hanging, and light box systems for brands and integrators in 30+ countries.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jinda-final.vercel.app/">
 <meta name="theme-color" content="#05070A">
+
+<!-- Favicon: inline SVG using the brand's own RGB sub-pixel mark, no external file needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' rx='4' fill='%2305070A'/%3E%3Ccircle cx='10' cy='6' r='3' fill='%23FF4D5E'/%3E%3Ccircle cx='5.5' cy='14' r='3' fill='%2337E27A'/%3E%3Ccircle cx='14.5' cy='14' r='3' fill='%233FA9FF'/%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jinda Advertising Display">
+<meta property="og:title" content="Jinda Advertising Display | LED &amp; Digital Signage Manufacturer">
+<meta property="og:description" content="Commercial LED and digital signage manufacturer — wall mounted, floor stand, hanging, and light box systems for brands and integrators in 30+ countries.">
+<meta property="og:url" content="https://jinda-final.vercel.app/">
+<meta property="og:image" content="https://jinda-final.vercel.app/cube-glow-poster.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jinda Advertising Display | LED &amp; Digital Signage Manufacturer">
+<meta name="twitter:description" content="Commercial LED and digital signage manufacturer for brands and integrators in 30+ countries.">
+<meta name="twitter:image" content="https://jinda-final.vercel.app/cube-glow-poster.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Jinda Advertising Display",
+  "description": "Commercial LED and digital signage manufacturer serving brands and integrators in 30+ countries.",
+  "url": "https://jinda-final.vercel.app/",
+  "logo": "https://jinda-final.vercel.app/cube-glow-poster.jpg"
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,8 +134,9 @@
   .spec-chips li{ list-style:none; font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-dim); border:1px solid var(--line); padding:.35rem .65rem; border-radius:.4rem; }
 
   /* Capability stats */
-  .capability-stat{ display:flex; gap:1rem; align-items:flex-start; min-width:0; }
+  .capability-stat{ display:flex; gap:1rem; align-items:flex-start; }
   .capability-stat .icon{ width:2.5rem; height:2.5rem; flex:none; border-radius:.65rem; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; color:var(--cyan); }
+  .capability-stat > div{ min-width:0; }
   .capability-stat .num{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.35rem; color:var(--ink); }
   .capability-stat .label{ font-family:'IBM Plex Mono',monospace; font-size:.66rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); margin-top:.15rem; }
 
@@ -114,7 +147,7 @@
   /* Certification badges */
   .badge-circle{ width:6rem; height:6rem; border-radius:9999px; border:1px solid var(--line-strong); display:flex; align-items:center; justify-content:center; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.1rem; color:var(--ink); margin:0 auto 1.25rem; background:radial-gradient(circle at 50% 30%, rgba(231,180,92,.14), transparent 70%); transition:border-color .3s ease, transform .3s ease; }
   .cert-badge:hover .badge-circle{ border-color:var(--gold); transform:translateY(-4px); }
-  .cert-badge h4{ font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--ink); margin-bottom:.35rem; }
+  .cert-badge h3{ font-family:'Space Grotesk',sans-serif; font-weight:600; color:var(--ink); margin-bottom:.35rem; }
   .cert-badge p{ font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-dim); }
 
   /* Reveal on scroll */
@@ -173,7 +206,7 @@
         <a href="#contact" class="btn-primary">Request a Quote</a>
       </div>
 
-      <button id="menuToggle" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-line text-ink" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button id="menuToggle" class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg border border-line text-ink" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg id="iconMenu" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"/></svg>
         <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg>
       </button>
@@ -183,11 +216,11 @@
 
 <!-- Mobile menu overlay -->
 <div id="mobileMenu" class="fixed inset-0 z-40 lg:hidden invisible opacity-0 -translate-y-2 transition-all duration-300 bg-void/97 backdrop-blur-xl">
-  <div class="h-full flex flex-col items-center justify-center gap-8 px-6">
-    <a href="#products" class="font-display text-2xl font-semibold text-ink">Products</a>
-    <a href="#manufacturing" class="font-display text-2xl font-semibold text-ink">Manufacturing</a>
-    <a href="#certifications" class="font-display text-2xl font-semibold text-ink">Certifications</a>
-    <a href="#contact" class="font-display text-2xl font-semibold text-ink">Contact</a>
+  <div class="h-full flex flex-col items-center justify-center gap-4 px-6">
+    <a href="#products" class="font-display text-2xl font-semibold text-ink py-2">Products</a>
+    <a href="#manufacturing" class="font-display text-2xl font-semibold text-ink py-2">Manufacturing</a>
+    <a href="#certifications" class="font-display text-2xl font-semibold text-ink py-2">Certifications</a>
+    <a href="#contact" class="font-display text-2xl font-semibold text-ink py-2">Contact</a>
     <a href="#contact" class="btn-primary mt-4">Request a Quote</a>
   </div>
 </div>
@@ -253,13 +286,15 @@
         </a>
       </div>
 
-      <div class="reveal group overflow-hidden rounded-3xl border border-line">
+      <div class="reveal group overflow-hidden rounded-3xl border border-line aspect-[16/10]">
         <img
           src="product-01.jpg"
           alt="Three-panel synchronized LED display system running a festival content sequence"
           width="928" height="800"
           loading="lazy"
-          class="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          decoding="async"
+          class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          style="object-position: center 72%;"
         >
       </div>
     </div>
@@ -268,7 +303,7 @@
   <!-- 2. Two-column cinematic reveal -->
   <section class="relative py-24 sm:py-28 bg-panel/20 border-y border-line">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div class="reveal order-2 lg:order-1">
+      <div class="reveal order-2 lg:order-1 min-w-0">
         <div class="eyebrow">
           <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
           Technical Reveal
@@ -281,14 +316,14 @@
         </a>
       </div>
 
-      <div class="reveal order-1 lg:order-2 group relative overflow-hidden rounded-[32px] border border-line aspect-video">
+      <div class="reveal order-1 lg:order-2 min-w-0 group relative overflow-hidden rounded-[32px] border border-line aspect-video">
         <video
-          class="pixel-video w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-          autoplay muted loop playsinline preload="metadata"
+          class="pixel-video lazy-play w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          muted loop playsinline preload="none"
           poster="cube-activate-poster.jpg"
           aria-hidden="true"
         >
-          <source src="cube-activate.mp4" type="video/mp4">
+          <source data-src="cube-activate.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -312,6 +347,7 @@
           alt="Product photography strip showing hanging digital signage above a restaurant counter, stacked hanging displays, and a standee signage display"
           width="1408" height="103"
           loading="lazy"
+          decoding="async"
           class="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         >
       </div>
@@ -336,12 +372,12 @@
 
       <div class="reveal group relative overflow-hidden rounded-[32px] border border-line aspect-video">
         <video
-          class="pixel-video w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-          autoplay muted loop playsinline preload="metadata"
+          class="pixel-video lazy-play w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          muted loop playsinline preload="none"
           poster="cube-glow-poster.jpg"
           aria-hidden="true"
         >
-          <source src="cube-glow.mp4" type="video/mp4">
+          <source data-src="cube-glow.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -484,7 +520,7 @@
   <!-- ============ MANUFACTURING ============ -->
   <section id="manufacturing" class="relative py-28 bg-panel/20 border-y border-line">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
-      <div class="reveal">
+      <div class="reveal min-w-0">
         <div class="eyebrow">
           <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3" fill="#FF4D5E"/><circle cx="5" cy="14" r="3" fill="#37E27A"/><circle cx="15" cy="14" r="3" fill="#3FA9FF"/></svg>
           Manufacturing
@@ -533,7 +569,7 @@
         </div>
       </div>
 
-      <div class="reveal">
+      <div class="reveal min-w-0">
         <div class="blueprint-wrap aspect-square">
           <div class="blueprint-scan" aria-hidden="true"></div>
           <svg viewBox="0 0 480 480" class="w-full h-full" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -581,17 +617,17 @@
       <div class="mt-16 grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
         <div class="reveal cert-badge">
           <div class="badge-circle">CE</div>
-          <h4>CE Marking</h4>
+          <h3>CE Marking</h3>
           <p>European Conformity</p>
         </div>
         <div class="reveal cert-badge">
           <div class="badge-circle">RoHS</div>
-          <h4>RoHS Compliant</h4>
+          <h3>RoHS Compliant</h3>
           <p>Hazardous Substance Free</p>
         </div>
         <div class="reveal cert-badge">
           <div class="badge-circle">ISO 9001</div>
-          <h4>ISO 9001</h4>
+          <h3>ISO 9001</h3>
           <p>Quality Management</p>
         </div>
       </div>
@@ -842,14 +878,31 @@
     requestAnimationFrame(draw);
   })();
 
-  // Cinematic product-story videos — respect reduced motion
+  // Cinematic product-story videos — load and play only once scrolled near viewport,
+  // and never autoplay for people who prefer reduced motion (poster frame stays static instead).
   (function () {
+    var videos = document.querySelectorAll('.lazy-play');
+    if (!videos.length) return;
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduceMotion) return;
-    document.querySelectorAll('.pixel-video').forEach(function (v) {
-      v.pause();
-      v.removeAttribute('autoplay');
-    });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var v = entry.target;
+        io.unobserve(v);
+        var source = v.querySelector('source[data-src]');
+        if (source) {
+          source.src = source.dataset.src;
+          source.removeAttribute('data-src');
+        }
+        v.load();
+        if (!reduceMotion) {
+          v.play().catch(function () { /* autoplay blocked — poster frame remains visible */ });
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '200px 0px' });
+
+    videos.forEach(function (v) { io.observe(v); });
   })();
 </script>
 
