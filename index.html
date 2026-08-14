@@ -749,6 +749,7 @@
   })();
 
   // Reveal-on-scroll
+  // Reveal-on-scroll
   (function () {
     var els = document.querySelectorAll('.reveal');
     if (!els.length) return;
@@ -762,10 +763,15 @@
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.05, rootMargin: '50px' }); // <-- Intha values mathiruken
+    
     els.forEach(function (el) { io.observe(el); });
-  })();
 
+    // FAIL-SAFE: Oruvelai observer trigger aagalana, 1.5s la force panni show pannidum
+    setTimeout(function() {
+      els.forEach(function(el) { el.classList.add('in-view'); });
+    }, 1500);
+  })();
   // Count-up stats
   (function () {
     var counters = document.querySelectorAll('.count-up');
